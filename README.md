@@ -18,11 +18,12 @@ django-template/
 │   ├── settings.py
 │   ├── urls.py
 │   └── middleware.py     # NoCacheAuthMiddleware
-├── users/                # Auth app (login, logout, dashboard)
+├── users/                # Auth app (login, signup, logout, dashboard)
 │   ├── views.py
 │   ├── urls.py
 │   └── templates/users/
 │       ├── login.html
+│       ├── signup.html
 │       └── dashboard.html
 ├── templates/            # Base templates and components
 │   ├── base.html         # Authenticated layout (sidebar + topbar)
@@ -84,6 +85,7 @@ Visit `http://127.0.0.1:8000/users/login/`.
 | URL | Name | Description |
 |-----|------|-------------|
 | `/users/login/` | `login` | Login page |
+| `/users/signup/` | `signup` | Registration page |
 | `/users/logout/` | `logout` | Logout (POST) |
 | `/users/dashboard/` | `dashboard` | Main dashboard (requires login) |
 | `/admin/` | — | Django admin panel |
@@ -93,8 +95,9 @@ Visit `http://127.0.0.1:8000/users/login/`.
 | Template | Extends | Used for |
 |----------|---------|----------|
 | `base.html` | — | All authenticated pages |
-| `base_auth.html` | — | Login, register, and other auth pages |
+| `base_auth.html` | — | Login, signup, and other auth pages |
 | `users/login.html` | `base_auth.html` | Login form |
+| `users/signup.html` | `base_auth.html` | Registration form |
 | `users/dashboard.html` | `base.html` | Dashboard |
 
 To add a new authenticated page, extend `base.html`:
