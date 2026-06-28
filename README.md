@@ -48,6 +48,7 @@ git clone <repo-url>
 cd django-template
 pipenv install
 pipenv shell
+pipenv sync
 ```
 
 ### 2. Configure environment variables
